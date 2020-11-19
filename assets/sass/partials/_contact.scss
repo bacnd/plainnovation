@@ -1,0 +1,251 @@
+@charset "utf-8";
+#wrapper {
+	.wrap-content {
+		.header-page.page-contact {
+			background: url('../images/main-contact.jpg') center top no-repeat;
+    		background-size: cover;
+		    background-attachment: fixed;
+		    background-position: center;
+		    background-repeat: no-repeat;
+		}
+		.box-contact {
+			margin-top: 2.1rem;
+			@media screen and (max-width: $wid-sp) {
+				padding: 0 1rem;
+			}
+			.intro {
+				@include Font(16, bold, #3e3a39);
+			    margin: 0;
+    			line-height: 2.2;
+    			@media screen and (max-width: $wid-sp) {
+    				line-height: 1.5;
+    				text-align: left;
+    			}
+			}
+			.form-content {
+				margin-top: 6.6rem;
+				.row {
+					margin-bottom: 3.2rem;
+					.frm-item {
+						.label-required {
+							background: $clr-oran;
+						}
+						.label-option {
+							background: #3e3a39;
+						}
+						.frm-col-3 {
+							width: calc(100% / 3.1);
+							display: inline-block;
+							overflow: hidden;
+							@media screen and (max-width: $wid-sp) {
+								width: 100%;
+								& + .frm-col-3 {
+									margin-top: 1.2rem;
+								}
+							}
+						}
+						input, textarea {
+							background: #f5f9ff;
+							width: 100%;
+							border: none;
+    						padding: 9px;
+    						resize: none;
+						}
+						p {
+							margin: 0;
+							width: -moz-fit-content;
+						    width: -webkit-fit-content;
+						    width: -ms-fit-content;
+						    width: -o-fit-content;
+						    width: fit-content;
+						}
+						.txt-placeholder {
+							@include Font(13, bold, #154290);
+						    margin-top: 1rem;
+						}
+						a {
+							@include Font(17, bold, #154290);
+						    margin-bottom: 2rem;
+    						display: block;
+    						border-bottom: 1px solid;
+						}
+						&:first-child {
+							width: 32%;
+							label {
+								@include Font(17, bold, #333);
+								padding-top: 1.3rem;
+    							display: block;
+								@media screen and (max-width: $wid-sp) {
+									padding-top: 0;
+									padding-bottom: 1.5rem !important;
+								}
+							}
+						}
+						&:last-child {
+							width: 68%;
+							@include Font(16, bold);
+						}
+						@media screen and (max-width: $wid-sp) {
+							width: 100% !important;
+						}
+					}
+					.btn-send {
+					    margin: 1.8rem auto;
+						.btn-submit {
+							width: 194px;
+    						height: 57px;
+							box-shadow: 1.989px 0.209px 8px 2px rgba(0, 59, 135, 0.1);
+							background: $color-main;
+						    position: relative;
+						    @include Font(18, bold, $white);
+						    border: none;
+						    text-align: center;
+						    &:hover {
+						    	opacity: 0.8;
+						    }
+						}
+					}
+					&:first-child {
+						margin-bottom: 3.7rem;
+					}
+					&:nth-child(6) {
+					    margin-bottom: 4.3rem;
+					}
+					&:first-child, &:nth-child(7) {
+						.frm-item:first-child {
+							label {
+								padding: 0;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+.checkbox {
+	&:after {
+	    content: '';
+	    display: table;
+	    clear: both;
+	}
+	.cr {
+	    position: relative;
+	    display: inline-block;
+	    border: 1px solid #154290;
+	    border-radius: .25em;
+	    width: 1.3em;
+	    height: 1.3em;
+	    float: left;
+	    margin-right: .5em;
+	    .cr-icon {
+		    position: absolute;
+		    font-size: .8em;
+		    line-height: 0;
+		    top: 52%;
+		    left: 15%;
+		    color: #154290;
+		}
+		.cr-icon {
+		    margin-left: 0.04em;
+		}
+	}
+	label {
+		margin-bottom: 1rem;
+		margin-top: 0.2rem;
+		input[type="checkbox"] {
+		    display: none;
+		}
+		input[type="checkbox"] + .cr > .cr-icon {
+			transform: scale(3) rotateZ(-20deg);
+		    opacity: 0;
+		    transition: all .3s ease-in;
+		}
+		input[type="checkbox"]:checked + .cr > .cr-icon {
+			transform: scale(1) rotateZ(0deg);
+    		opacity: 1;
+		}
+		input[type="checkbox"]:disabled + .cr {
+			opacity: .5;
+		}
+	}
+}
+
+/* Custom Radio Button Start*/
+
+.radio {
+	display: block;
+	position: relative;
+	padding-left: 30px;
+	margin-bottom: 0px;
+	cursor: pointer;
+	font-size: 18px;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	.radiotextsty {
+		@include fontsize(16);
+	}
+	/* Hide the browser's default radio button */
+	input {
+		position: absolute;
+		opacity: 0;
+		cursor: pointer;
+	}
+	/* On mouse-over, add a grey background color */
+	&:hover input ~ .checkmark {
+		background-color: transparent;
+	}
+	/* When the radio button is checked, add a blue background */
+	input:checked ~ .checkmark {
+		background-color: white;
+		border:1px solid #154290;
+	}
+	/* Show the indicator (dot/circle) when checked */
+	input:checked ~ .checkmark:after {
+		display: block;
+	}
+	/* Create a custom radio button */
+	.checkmark {
+		position: absolute;
+		top: 4px;
+		left: 0;
+		height: 17px;
+		width: 17px;
+		background-color: white;
+		border-radius: 50%;
+		border:1px solid #154290;
+		/* Create the indicator (the dot/circle - hidden when not checked) */
+		&:after {
+			content: "";
+			position: absolute;
+			display: none;
+		}
+		/* Style the indicator (dot/circle) */
+		&:after {
+			top: 0;
+			left: 2px;
+			width: 9px;
+			height: 9px;
+			border-radius: 50%;
+			background: #154290;
+		    border: 1px solid #154290;
+		    bottom: 0;
+			margin: auto;
+		}
+		/* Custom Radio Button End*/
+	}
+}
+.fa {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale
+}
+.fa-check:before {
+    content: "\f00c";
+}

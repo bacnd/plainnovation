@@ -1,0 +1,110 @@
+@charset "utf-8";
+
+/*get %*/
+@function cent($options) {
+	@return ($options * 100%) / 770;
+}
+
+/*get vw*/
+@function setvw($target) {
+	$vw: (770 * 0.01) * 1px;
+	@return ($target / $vw) * 1vw;
+}
+
+/*keyframes*/
+@mixin keyframes($name) {
+	@-webkit-keyframes #{$name} {
+		@content;
+	}
+	@keyframes #{$name} {
+		@content;
+	}
+}
+
+/* base valiables */
+$fontjp: YuGothic, 'Yu Gothic', sans-serif;
+$fonten: 'Roboto', sans-serif;
+$fontme: 'Metropolis', sans-serif;
+$fontme-bold: 'Metropolis_Bold', sans-serif;
+$font-html: 62.5%;
+$contents-width: 1000px;
+$color-main: #003b87;
+$white: #fff;
+$clr-oran: #e83828;
+$clr-active: #bc0014;
+$wid-sp: 768px;
+$duration: .5s;
+$distance: 10px;
+$easeOutBack: cubic-bezier(0.175, 0.885, 0.320, 1.275);
+
+/* common mixins */
+@mixin fontsize($size, $base: 10) {
+  	// font-size: $size + px;
+  	font-size: ($size / $base) * 1rem;
+  	@media screen and (max-width: 414px) {
+		font-size: get-vw($size);
+	}
+}
+
+@mixin Font($fontSize, $fontWeight: null, $color : null, $fontFamily: null){
+    font-size: ($fontSize / 10) * 1rem;
+    color: $color;
+    font-family: $fontFamily; 
+    font-weight: $fontWeight;
+    @media screen and (max-width: 414px) {
+		font-size: get-vw($fontSize);
+    }
+}
+
+@function get-vw($target) {   
+	$vw-context: (414 * 0.01) * 1;  
+	@return ($target / $vw-context) * 1vw; 
+}
+
+@mixin transition($options:.5s all ease) {
+    -webkit-transition: ($options);
+    -ms-transition: ($options);
+	-moz-transition: ($options);
+    transition: ($options);
+}
+
+@mixin transform($options) {
+	-webkit-transform: ($options);
+	-ms-transform: ($options);
+	-moz-transform: ($options);
+	transform: ($options);
+}
+
+@mixin animation($options) {
+	-webkit-animation: ($options);
+	-ms-animation: ($options);
+	-moz-animation: ($options);
+	animation: ($options);
+}
+
+@mixin flexwidth($options) {
+	-webkit-flex: 0 0 ($options);
+    -ms-flex: 0 0 ($options);
+    flex: 0 0 ($options);
+    max-width: ($options);
+}
+
+@mixin radius($options) {
+	-ms-border-radius: ($options);
+	-moz-border-radius: ($options);
+	-webkit-border-radius: ($options);
+	border-radius: ($options);
+}
+
+@mixin hover-bg {
+	background: $bg;
+	color: $color-main;
+}
+
+@mixin clearfix {
+	&:after {
+		content: '';
+		display: block;
+		clear: both;
+	}
+}

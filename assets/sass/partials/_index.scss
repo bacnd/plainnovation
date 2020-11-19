@@ -1,0 +1,589 @@
+#wrapper {
+	.wrap-content {
+		margin-bottom: 8rem;
+		display: block;
+		.box-01 {
+			background: url('../images/bg-box-01.png') right no-repeat;
+			width: 100%;
+			height: 695px;
+			display: table;
+			margin-top: 6.8rem;
+			padding-left: 6rem;
+			@media screen and (max-width: $wid-sp) {
+				background: $white;
+				padding: 0 1rem;
+				height: auto;
+			}
+			.bx-title {
+				@include Font(40, bold, $color-main);
+				margin-top: 10rem;
+				margin-bottom: 1.5rem;
+				line-height: 1.5;
+				@media screen and (max-width: $wid-sp) {
+					margin-top: 0;
+					text-align: center;
+					@include fontsize(28);
+				}
+			}
+			.box-content {
+				.txt-medium {
+					@include Font(20, bold, #3e3a39);
+					br {
+						display: none;
+					}
+					@media screen and (max-width: $wid-sp) {
+						text-align: center;
+						padding-top: 2rem;
+						br {
+							display: block;
+						}
+					}
+				}
+				.excerpt {
+					@include Font(16, bold, #333333);
+					max-width: 490px;
+					line-height: 2;
+					margin-top: 3.7rem;
+					margin-bottom: 5.1rem;
+					@media screen and (max-width: $wid-sp) {
+						max-width: none;
+						margin-top: 1rem;
+					}
+				}
+				.btn {
+					margin: 0;
+				}
+			}
+		}
+		.box-solution {
+			background: url('../images/bg.png') center;
+			width: 100%;
+			height: 857px;
+			display: table;
+			margin-top: 5rem;
+			position: relative;
+			margin-bottom: -5rem;
+			@media screen and (max-width: $wid-sp) {
+				margin: 0;
+				padding: 0 1rem;
+			}
+			.container {
+				z-index: 2;
+				position: relative;
+			}
+			.title-box {
+				margin-top: 6.5rem;
+				margin-bottom: 2.8rem;
+				font-family: $fontme-bold;
+			    letter-spacing: 1px;
+			    @media screen and (max-width: 320px) {
+					@include fontsize(48);
+				}
+			}
+			.description {
+				@include Font(16, bold, #000);
+				line-height: 2;
+				@media screen and (max-width: $wid-sp) {
+					br {
+						display: none;
+					}
+				}
+			}
+			.box-content {
+			    margin-top: 2.6rem;
+			    @media screen and (max-width: $wid-sp) {
+					padding-bottom: 3rem;
+				}
+				.col-3 {
+					width: calc(100% / 3 - 4rem);
+					float: left;
+					margin-right: 6rem;
+					@media screen and (max-width: $wid-sp) {
+						width: 100%;
+						margin-right: 0;
+						margin-bottom: 2rem;
+					}
+					.title-col {
+						margin-bottom: 2rem;
+						a {
+							@include Font(20, bold, #000);
+							@media screen and (max-width: $wid-sp) {
+								@include fontsize(25);
+							}
+						}
+					}
+					p {
+						text-align: left;
+					    margin-top: 2rem;
+    					line-height: 1.9;
+    					@include Font(16, 300, #000);
+					}
+					&:last-child {
+						margin-right: 0;
+					}
+				}
+			}
+			@media screen and (min-width: $wid-sp) {
+				&:before {
+					content: '';
+					background: url('../images/layout-solution.png') center no-repeat;
+					position: absolute;
+					width: 100%;
+					height: 100%;
+					top: -5rem;
+					left: 0;
+					z-index: 1;
+				}
+			}
+		}
+		.box-case-study {
+			background: $color-main;
+			display: table;
+			width: 100%;
+			position: relative;
+			z-index: 1;
+			.title-box {
+				color: $white;
+				letter-spacing: 5px;
+    			margin-top: 8.2rem;
+			    margin-bottom: 1.4rem;
+			    @media screen and (max-width: $wid-sp) {
+					padding: 0 1rem;
+				}
+			}
+			.description {
+				@include Font(16, null, $white);
+				line-height: 2;
+				margin-bottom: 5.1rem;
+				@media screen and (max-width: $wid-sp) {
+					br {
+						display: none;
+					}
+					padding: 0 1rem;
+				}
+			}
+			.box-content {
+				.case-bocon {
+					display: table;
+					width: 100%;
+					color: $white;
+					font-weight: bold;
+					@media screen and (max-width: $wid-sp) {
+						height: 568px;
+						@media screen and (max-width: 320px) {
+						    height: 500px;
+						}
+					}
+					.txt-small-bocon {
+						@include fontsize(12);
+						font-family: $fontme-bold;
+						letter-spacing: 1px;
+					}
+					.title-bocon {
+						@include fontsize(24);
+						margin: 0.3rem 0 1rem;
+    					letter-spacing: 1px;
+    					@media screen and (max-width: $wid-sp) {
+							@include fontsize(22);
+						}
+					}
+					.des-bocon {
+						@include fontsize(16);
+						margin-bottom: 5.7rem;
+					}
+					a {
+						color: $white;
+					}
+					.box-left {
+						float: left;
+						@media screen and (min-width: $wid-sp) {
+							.btn {
+								margin: 0;
+							}
+						}
+					}
+					.box-right {
+						float: right;
+					}
+					&.case01 {
+						background: url('../images/bg-case-01.png') center no-repeat;
+						background-size: cover;
+						padding: 7.4rem 0;
+						@media screen and (max-width: $wid-sp) {
+							background: url('../images/bg-case-01-sp.png') center no-repeat;
+							background-size: cover;
+							padding: 6.5rem 0;
+							@media screen and (max-width: 320px) {
+							    padding: 5.5rem 0;
+							}
+							.container {
+								display: flex;
+								flex-flow: wrap;
+								.box-right {
+									order: -1;
+									text-align: center;
+									max-width: 310px;
+									margin: auto;
+									@media screen and (max-width: 320px) {
+										max-width: 210px;
+									}
+								}
+							}
+						}
+						.box-left {
+							padding-top: 5rem;
+							@media screen and (max-width: $wid-sp) {
+							    padding-top: 13rem;
+							    @media screen and (max-width: 320px) {
+									padding-top: 6.8rem;
+								}
+							}
+						}
+						@media screen and (min-width: $wid-sp) {
+							.box-right {
+								margin-right: -2.7rem;
+							}
+						}
+					}
+					&.case02 {
+						background: url('../images/bg-case-02.png') center no-repeat;
+						background-size: cover;
+						padding: 12.4rem 0 12.8rem;
+						@media screen and (max-width: $wid-sp) {
+							background: url('../images/bg-case-02-sp.png') center no-repeat;
+							background-size: cover;
+							padding: 6.5rem 0;
+						}
+						.box-left {
+							text-align: right;
+							width: 70.5%;
+							.txt-bocon {
+								@include fontsize(26);
+								padding-top: 0.7rem;
+    							letter-spacing: 1.1px;
+							}
+						}
+						.box-right {
+							@media screen and (max-width: $wid-sp) {
+						        padding-top: 34.6rem;
+						        @media screen and (max-width: 320px) {
+									padding-top: 20.1rem;
+								}
+							}
+							.title-bocon {
+								margin-bottom: 5.5rem;
+							}
+						}
+					}
+					&.case03 {
+						background: url('../images/bg-case-03.png') center no-repeat;
+						background-size: cover;
+						padding: 6.5rem 0;
+						@media screen and (max-width: $wid-sp) {
+							background: url('../images/bg-case-03-sp.png') center no-repeat;
+							background-size: cover;
+							@media screen and (max-width: 320px) {
+								padding: 5.5rem 0;
+							}
+							.container {
+								display: flex;
+								flex-flow: wrap;
+								.box-right {
+									order: -1;
+									text-align: center;
+									max-width: 310px;
+									margin: auto;
+									@media screen and (max-width: 320px) {
+										max-width: 210px;
+									}
+								}
+								.box-left {
+									padding-top: 12.7rem;
+									@media screen and (max-width: 320px) {
+										padding-top: 6.7rem;
+									}
+								}
+							}
+						}
+						.box-left {
+							padding-top: 6.4rem;
+						}
+					}					
+					@media screen and (max-width: $wid-sp) {
+						.box-left, .box-right {
+							width: 100%;
+						}
+						&.case01, &.case02, &.case03 {
+							padding-left: 1rem;
+							padding-right: 1rem;
+						}
+					}
+				}
+			}
+		}
+		.box-works {
+			background: url('../images/bg-works.png') center no-repeat;
+			width: 100%;
+			height: auto;
+			background-size: cover;
+			display: inline-block;
+			padding-bottom: 8.7rem;
+			.title-box {
+				color: $white;
+			    margin-top: 6.4rem;
+			    letter-spacing: 4px;
+			    margin-bottom: 4.3rem;
+			}
+			.description {
+				@include Font(16, null, $white);
+				line-height: 2;
+				margin-bottom: 5.1rem;
+				@media screen and (max-width: $wid-sp) {
+					br {
+						display: none;
+					}
+					padding: 0 1rem;
+				}
+			}
+			.box-content {
+				overflow: hidden;
+				.slider-works {
+					margin-bottom: 4rem;
+					.slider-item {
+					    margin: 0 3.5rem;
+    					position: relative;
+    					@media screen and (max-width: 480px) {
+							margin: 0 2.5rem;
+						}
+						img {
+							width: 100%;
+						}
+    					.caption {
+    						font-weight: bold;
+    						color: $white;
+    						margin-top: 2.2rem;
+    						a {
+    							@include Font(24, null, $white);
+    						}
+    						.label {
+    							@include fontsize(14);
+    							border: 2px solid $white;
+    							padding: 0 0.5rem;
+    							width: -moz-fit-content;
+							    width: -webkit-fit-content;
+							    width: -ms-fit-content;
+							    width: -o-fit-content;
+							    width: fit-content;
+    							margin-top: 0.3rem;
+    							display: table;
+    							@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+								   padding-top: 7px;
+								}
+    						}
+    					}
+					}
+					.arrow-slider {
+					    max-width: 650px;
+					    width: 100%;
+					    position: absolute;
+					    z-index: 9;
+					    left: 0;
+					    right: 0;
+					    margin: 0 auto;
+					    top: 35.5%;
+					    @media screen and (max-width: $wid-sp) {
+					    	max-width: none;
+							top: 33%;
+							width: 95%;
+						}
+						@media screen and (max-width: 480px) {
+							top: 30%;
+						}
+						@media screen and (max-width: 375px) {
+							top: 26%;
+						}
+					    .slick_prev, .slick_next {
+					    	cursor: pointer;
+					    	@media screen and (max-width: 480px) {
+								img {
+									width: 45px !important;
+								}
+							}
+					    }
+					    .slick_next {
+						    right: 0;
+						    position: absolute;
+						}
+					}
+					.slick-track {
+						overflow: hidden;
+					}
+				}
+				.work-more {
+					width: -moz-fit-content;
+				    width: -webkit-fit-content;
+				    width: -ms-fit-content;
+				    width: -o-fit-content;
+				    width: fit-content;
+					margin: 0 auto;
+					display: table;
+				}
+			}
+		}
+		.box-news {
+			background: url('../images/bg-news.png') center;
+			width: 100%;
+			height: 620px;
+			display: inline-block;
+			.title-box {
+				color: #3d3331;
+				margin-top: 4.3rem;
+			    letter-spacing: 4px;
+			    margin-bottom: 6.3rem;
+			}
+			@media screen and (max-width: $wid-sp) {
+				padding: 0 1rem 5rem;
+				height: auto;
+			}
+			.box-content {
+				.news-list {
+					.news-item {
+						width: calc(100% / 3 - 1.4rem);
+						margin-right: 2rem;
+						float: left;
+						background: $white;
+						box-shadow: 1.989px 0.209px 5.7px 0.3px rgba(62, 58, 57, 0.19);
+						padding: 2.3rem;
+						border-top: 3px solid $clr-oran;
+						@media screen and (max-width: $wid-sp) {
+							width: 100%;
+							margin-bottom: 3rem;
+						}
+						.hd-item {
+							margin-bottom: 3.5rem;
+							.date {
+								float: left;
+								@include Font(14, bold, #333);
+							}
+							.category {
+								float: right;
+								@include Font(12, bold, $white);
+								background: $clr-oran;
+								width: 7rem;
+							    text-align: center;
+							    margin-top: -3px;
+							    height: 2rem;
+							    display: flex;
+							    align-items: center;
+							    justify-content: center;
+							    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+								   padding-top: 5px;
+								}
+							}
+						}
+						.body-item {
+							.title-item {
+							    margin-bottom: 1.1rem;
+								a {
+									@include Font(16, bold, #000);
+									text-decoration: underline;
+									line-height: 25px;
+									&:hover {
+										text-decoration: none;
+									}
+								}
+							}
+							.excerpt-item {
+								@include Font(14, bold, #7d7c7c);
+							}
+							.more-item {
+								margin-top: 2rem;
+								margin-bottom: 0.2rem;
+								a {
+									@include Font(13, 800, #000, $fonten);
+									text-transform: uppercase;
+									position: relative;
+									padding-right: 3rem;
+									&:after {
+										content: '';
+										background: url('../images/more-post.png') center no-repeat;
+										position: absolute;
+										width: 20px;
+										height: 6px;
+										top: 0;
+									    bottom: 0;
+									    right: 0;
+									    margin: auto;
+									}
+								}
+							}
+						}
+						&:last-child {
+							margin-right: 0;
+						}
+						&:nth-child(2n+0) {
+							border-top: 3px solid $color-main;
+							.category {
+								background: $color-main;
+							}
+						}
+					}
+				}
+				.news-more {
+					margin-right: auto;
+					margin-left: auto;
+					margin-top: 6rem;
+					display: table;
+				}
+			}
+		}
+		.box-culture {
+			width: 100%;
+			height: 620px;
+			display: table;
+			@media screen and (max-width: $wid-sp) {
+				padding: 0 1rem;
+				height: auto;
+			}
+			.title-box {
+				color: #3d3331;
+				margin-top: 6.3rem;
+			    letter-spacing: 6px;
+			    margin-bottom: 4.3rem;
+			}
+			.box-content {
+				.article-list {
+					.article-item {
+						float: left;
+						width: calc(100% / 2.75 - 6.63px);
+						position: relative;
+						@media screen and (max-width: $wid-sp) {
+							float: none;
+							width: 100% !important;
+						}
+						h3 {
+							position: absolute;
+							bottom: 2.2rem;
+							@include Font(16, null, $white);
+						    padding-left: 2.1rem;
+						    padding-right: 3rem;
+						    letter-spacing: -1.6px;
+						    margin: 0;
+						}
+						@media screen and (min-width: $wid-sp) {
+							&:first-child {
+								width: calc(100% / 1.5 - 23.68px);
+								h3 {
+									bottom: 4.3rem;
+									padding-left: 3.6rem;
+									@include Font(27, null, $white);
+									padding-right: 2rem;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

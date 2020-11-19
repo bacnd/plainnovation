@@ -1,0 +1,152 @@
+@charset "utf-8";
+footer {
+	background: $color-main;
+	color: $white;
+	.ft-content {
+		padding-top: 4.2rem;
+		@media screen and (max-width: $wid-sp) {
+			display: flex;
+    		flex-wrap: wrap;
+    		padding-left: 1rem;
+    		padding-right: 1rem;
+    		padding-top: 2rem;
+		}
+		.ft-left {
+			float: left;
+			p {
+				@include Font(16, bold);
+				line-height: 2;
+			    margin: 1.7rem 0 2.1rem;
+    			letter-spacing: 0.5px;
+    			@media screen and (max-width: $wid-sp) {
+				    text-align: left;
+				}
+			}
+			.btn-email {
+				width: 291px;
+				height: 62px;
+				background: #1961be;
+				@include Font(16, bold, $white);
+			    display: flex;
+				align-items: center;
+				justify-content: center;
+			    position: relative;
+			    padding-left: 3rem;
+			    &:before {
+			    	content: '';
+			    	background: url('../images/ic-mail.png') no-repeat;
+			    	position: absolute;
+			    	width: 2.2rem;
+			    	height: 1.5rem;
+			    	left: 8rem;
+			    	top: 0;
+				    bottom: 0;
+				    margin: auto;
+			    }
+			    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+			   		padding-top: 6px;
+				}
+			}
+			@media screen and (max-width: $wid-sp) {
+			    text-align: center;
+    			margin: 2rem auto 3rem;
+			}
+		}
+		.ft-right {
+			float: right;
+			@media screen and (max-width: $wid-sp) {
+				order: -1;
+			}
+			.ft-menu {
+				ul {
+					margin-top: 1rem;
+					a {
+						@include Font(16, 600, $white, $fonten);
+						text-transform: uppercase;
+					    margin-left: 3.9rem;
+    					letter-spacing: 1px;
+					}
+				}
+			}
+			.ft-culture {
+				margin-top: 5.2rem;
+				float: right;
+				@media screen and (max-width: $wid-sp) {
+					margin-top: 0;
+					display: block;
+				}
+				.ft-cult-item {
+					position: relative;
+					@media screen and (max-width: $wid-sp) {
+						margin-bottom: 2rem;
+					}
+					p {
+						position: absolute;
+						top: 0;
+						bottom: 0;
+						text-align: center;
+						width: 100%;
+						@include Font(20, bold, $white);
+					    line-height: 0.7;
+					    display: flex;
+					    width: 100%;
+					    text-align: center;
+					    align-items: center;
+					    justify-content: center;
+					    flex-direction: column;
+						span {
+							@include fontsize(16);
+						}
+						@-moz-document url-prefix() {
+						    span {
+							    display: table;
+    							padding-bottom: 14px;
+							}
+						}
+					}
+					@media screen and (min-width: $wid-sp) {
+						&:first-child {
+							margin-right: 1.6rem;
+						}
+					}
+				}
+			}
+		}
+		@media screen and (max-width: 992px) and (min-width: $wid-sp) {
+			.ft-left, .ft-right, .ft-culture {
+				float: none !important;
+			}
+			.ft-left {
+				text-align: center;
+				margin: auto;
+				.btn-email {
+					margin: auto;
+				}
+			}
+			.ft-menu {
+				ul  {
+					display: block;
+					text-align: center;
+					margin-top: 5rem !important;
+					li {
+						display: inline-block;
+					}
+				}
+			}
+			.ft-culture  {
+				display: block;
+				text-align: center;
+				margin-top: 2rem !important;
+				.ft-cult-item {
+					display: inline-block;
+				}
+			}
+		}
+
+	}
+	.copyright {
+		@include Font(14, 900, $white, $fonten);
+	    letter-spacing: 1px;
+    	padding: 3.8rem 1rem 2.5rem;
+	}
+}

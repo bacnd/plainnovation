@@ -1,0 +1,267 @@
+@charset "utf-8";
+
+header {
+	&.header-top {
+		background: url('../images/bg-header.png') center no-repeat;
+		background-size: cover;
+		width: 100%;
+		height: 760px;
+		position: relative;
+		@media screen and (max-width: $wid-sp) {
+			background: url('../images/bg-header-sp.png') center no-repeat;
+			background-size: cover;
+			height: 600px;
+		}
+	    @media screen and (max-width: 320px) {
+		    height: 568px;
+		}
+		.hd-content {
+			background: rgba(#154290, 0.6);
+			height: 100%;
+		}
+	}
+	&.header-subpage {
+		position: absolute;
+	    z-index: 1;
+	    width: 100%;
+	}
+	.hd-top {
+		max-width: 1366px;
+    	margin: 0 auto;
+		.logo {
+			float: left;
+			padding-left: 27px;
+			@media screen and (max-width: $wid-sp) {
+				width: 80%;
+				padding-left: 1rem;
+			}
+			@media screen and (max-width: 320px) {
+			    padding-top: 0.6rem;
+			}
+		}
+		.hd-menu {
+			float: right;
+			letter-spacing: 1px;
+			@media screen and (max-width: 1010px) {
+				display: none;
+			}
+			ul {
+				margin: 0;
+			}
+			a {
+				padding: 2.5rem 2.4rem;
+				@include Font(18, 600, $white, $fonten);
+				display: block;
+				position: relative;
+				text-align: center;
+				// @media screen and (max-width: 1650px) {
+				// 	padding: 2.4rem 1.5rem;
+				// }
+				@media screen and (max-width: 1366px) {
+					padding: 2.4rem 2.38rem;
+				}
+				@media screen and (max-width: 1336px) {
+					padding: 2.4rem 2rem;
+				}
+				@media screen and (max-width: 1282px) {
+					padding: 2.4rem 1.3rem;
+				}
+				@media screen and (max-width: 1160px) {
+					padding: 2.4rem 0.9rem;
+				}
+				@media screen and (max-width: 1100px) {
+					padding: 2.4rem 0.36rem;
+				}
+				@media screen and (min-width: $wid-sp) {
+					&:before,
+				    &:after {
+				        content: '';
+				        position: absolute;
+				        bottom: 0;
+				        left: 0; right: 0;
+				        height: 2px;
+				        background-color: $white;
+				    }
+				    &:before {
+				        opacity: 0;
+				        transform: translateY(- $distance);
+				        transition: transform 0s $easeOutBack, opacity 0s;
+				    }
+				    &:after {
+				        opacity: 0;
+				        transform: translateY($distance/2);
+				        transition: transform $duration $easeOutBack, opacity $duration;
+				    }
+				    &:hover,
+				    &:focus {
+				        &:before,
+				        &:after {
+				            opacity: 1;
+				            transform: translateY(0);
+				        }
+				        &:before {
+				            transition: transform $duration $easeOutBack, opacity $duration;
+				        }
+				        &:after {
+				            transition: transform 0s $duration $easeOutBack, opacity 0s $duration;
+				        }
+				    }
+				}
+			}
+			@media screen and (min-width: $wid-sp) {
+				.current {
+					a {
+						&:before,
+				        &:after {
+				            opacity: 1;
+				            transform: translateY(0);
+				        }
+					}
+				}
+			}
+			.cont-active {
+				a {
+					background: $clr-active;
+					width: 184px;
+					&:before,
+				    &:after {
+				    	content: none;
+				    }
+				    @media screen and (max-width: 1366px) {
+						width: 165px;
+					}
+				    @media screen and (max-width: 1245px) {
+				    	width: 120px;
+				    	margin: auto;
+				    }
+				    @media screen and (max-width: $wid-sp) {
+				    	width: 60%;
+				    }
+				}
+			}
+			&.active {
+				@media screen and (max-width: 1010px) {
+					display: block !important;
+					width: 100%;
+					text-align: center;
+					position: absolute;
+					ul {
+						background: $color-main;
+						display: block;
+						padding: 5rem 0 4rem;
+						a {
+							padding: 1.7rem 0.5rem;
+						}
+					}
+				}
+			}
+		}
+		.btn-acmenu {
+			float: right;
+			padding: 0;
+			-webkit-border-radius: 4px;
+			-moz-border-radius: 4px;
+			border-radius: 4px;
+			position: absolute;
+			right: 0;
+			top: -7px;
+			z-index: 999;
+			@media screen and (min-width: 1011px) {
+				display: none;
+			}
+			.btn-menusp {
+				position: relative;
+				width: 45px;
+				height: 45px;
+				border-radius: 5px;
+				margin-right: 10px;
+				margin-top: 17px;
+				display: table;
+				cursor: pointer;
+				span {
+					position: absolute;
+					left: 0;
+					right: 0;
+					margin: auto;
+					width: 45px;
+					height: 4px;
+					background-color: $white;
+					transition: all .4s;
+					&:nth-child(1) {
+						top: 7px;
+					}
+					&:nth-child(2) {
+						top: 21px;
+					}
+					&:nth-child(3) {
+						top: 36px;
+					}
+				}
+				&.active {
+					span:nth-of-type(1) {
+						-webkit-transform: translateY(10px) rotate(-45deg);
+						transform: translateY(10px) rotate(-45deg);
+						top: 11px;
+					}
+
+					span:nth-of-type(2) {
+						opacity: 0;
+					}
+
+					span:nth-of-type(3) {
+						-webkit-transform: translateY(-15px) rotate(45deg);
+						transform: translateY(-15px) rotate(45deg);
+						top: 36px;
+					}
+				}
+			}
+		}
+	}
+	.hd-bttom {
+		color: $white;
+		max-width: 1366px;
+    	margin: 0 auto;
+		.logo-big {
+			display: table;
+			margin: 0 auto;
+			width: 100%;
+			padding-top: 11vh;
+			@media screen and (max-width: $wid-sp) {
+				padding-top: 9.5vh;
+		    	img {
+		    		width: 150px;
+		    	}
+		    }
+		    @media screen and (max-width: 320px) {
+			    padding-top: 23.5vh;
+			}
+		}
+		.solo {
+			padding-top: 6.3vh;
+			@include Font(26, bold);
+			letter-spacing: 1px;
+			@media screen and (max-width: $wid-sp) {
+				font-size: 5vw;
+		    }
+		}
+		#scroll-down {
+			@include Font(14, 900, $white, $fonten);
+			letter-spacing: 1px;
+			position: absolute;
+			bottom: 4rem;
+			left: 0;
+    		right: 0;
+    		animation: movearrow 2s infinite;
+			-webkit-animation: movearrow 2s infinite;
+			-moz-animation: movearrow 2s infinite;
+			-o-animation: movearrow 2s infinite;
+			-ms-animation: movearrow 2s infinite;
+			p {
+				margin-bottom: 1.5rem;
+			}
+			&:focus {
+				outline: none;
+			}
+		}
+	}
+}
